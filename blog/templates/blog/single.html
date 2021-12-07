@@ -3,7 +3,6 @@
 {% load sidebar %}
 {% block title %} {{ title }} :: {{ block.super }}{% endblock %}
 {% block content %}
-
         <section class="single-blog-area">
             <div class="container">
                 <div class="row">
@@ -37,51 +36,23 @@
                                 <div class="for-style">
                                     {{ post.content|safe }}
                                 </div>
-                                <img src="img/single-bg.jpg" alt="">
-                                    <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="image-one">
-                                            <img src="img/blog-image1.jpg" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="image-two">
-                                            <img src="img/blog-image2.jpg" alt="">
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                            <form action="#" method="get">
-                                <div class="name">
-                                    <input type="text" name="" id="" placeholder="Name" class="name">
-                                </div>
-                                <div class="email">
-                                    <input type="email" name="" id="" placeholder="Email" class="email">
-                                </div>
-                                <div class="comment">
-                                    <input type="text" name="" id="" placeholder="Comment" class="comment">
-                                </div>
-                                <div class="post">
-                                    <input type="submit" value="Post">
-                                </div>
-                            </form>
                         </div>
                     </div>
                     <div class="col-md-4">
-                            {% get_popular_post %}
-                            {% get_tags %}
                         <div class="newsletter">
-                            <h2 class="sidebar-title">Subscribe To oUR nEWSLETTER</h2>
-                            <form action="#" method="post">
-                                <input type="email" name="" id="" placeholder="Email">
-                                <input type="submit" value="Subscribe">
+                            <h2 class="sidebar-title">Поиск записей</h2>
+                            <form action="{% url 'search' %}" method="get">
+                                <input type="text" name="s" placeholder="Поиск...">
+                                <input type="submit" value="Найти">
                             </form>
                         </div>
+                            {% get_popular_post %}
+                            {% get_tags %}
                     </div>
                     </div>
                     </div>
                 </div>
             </div>
         </section>
-
 {% endblock %}

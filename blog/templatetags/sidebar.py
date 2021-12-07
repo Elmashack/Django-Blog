@@ -13,5 +13,5 @@ def get_popular_post(cnt=3):
 
 @register.inclusion_tag('blog/tag_bar.html')
 def get_tags():
-    tags = Tag.objects.filter()
-    return {'tags': tags,}
+    tags = Tag.objects.all()
+    return {'tags': tags}
